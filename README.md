@@ -1,5 +1,7 @@
 # markdownarea.js
 
+In-browser, markdown documentation tool.
+
 ## Usage
 
 ```html
@@ -13,6 +15,8 @@
 </body>
 </html>
 ```
+
+The html file is rendered by parsed markdown.
 
 ## TODO
 
