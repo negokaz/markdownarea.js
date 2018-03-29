@@ -2,6 +2,8 @@
 
 In-browser, markdown documentation tool.
 
+[Demo](https://negokaz.github.io/markdownarea.js)
+
 ## Usage
 
 ```html
