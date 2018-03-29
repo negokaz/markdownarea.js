@@ -28,6 +28,7 @@ var markdownIt              = require('markdown-it')({
 .use(require('markdown-it-task-lists'))
 ;
 
+import 'github-markdown-css';
 import '../css/app.css';
 
 // render markdown
