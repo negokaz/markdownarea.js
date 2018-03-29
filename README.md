@@ -28,4 +28,4 @@ The html file is rendered by parsed markdown.
 
 Copyright (c) 2018 Kazuki Negoro
 
-marked-html is released under the [MIT License](./LICENSE)
+markdownarea.js is released under the [MIT License](./LICENSE)
