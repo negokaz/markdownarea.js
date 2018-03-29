@@ -9,7 +9,7 @@
 <textarea class="markdownarea">
 # Markdown here!
 </textarea>
-<script src="markdownarea.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js/dist/markdownarea.js"></script>
 </body>
 </html>
 ```
