@@ -13,7 +13,7 @@ In-browser, markdown documentation tool.
 <textarea class="markdownarea">
 # Markdown here!
 </textarea>
-<script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.1.0/dist/markdownarea.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.2.0/dist/markdownarea.js"></script>
 </body>
 </html>
 ```
