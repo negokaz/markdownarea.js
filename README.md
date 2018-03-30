@@ -22,9 +22,7 @@ The html file is rendered by parsed markdown.
 
 ## TODO
 
-- [ ] Emoji
 - [ ] Size specified image
-- [ ] Block containers (ex: info, warning, etc...)
 
 ## Licence
 
