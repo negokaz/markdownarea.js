@@ -38,13 +38,32 @@ var markdownIt              = require('markdown-it')({
 .use(require('markdown-it-task-lists'))
 ;
 
+function unindentText(text) {
+    if (!text) {
+        return text;
+    }
+    var softTabText = text.replace(/\t/g, '    ');
+    var lines = softTabText.split('\n');
+    var indent = lines.reduce(function(acc, line) {
+        if (/^\s*$/.test(line)) return acc;  // Completely ignore blank lines.
+        var lineIndent = line.match(/^(\s*)/)[0].length;
+        if (acc === null) {
+            return lineIndent;
+        } else {
+            return lineIndent < acc ? lineIndent : acc;
+        }
+      }, /*initialValue*/null);
+    return lines.map(function(line) { return line.substr(indent); }).join('\n');
+}
+
 import 'github-markdown-css';
 import '../css/app.css';
 
 // render markdown
 var view = document.createElement('div');
 view.className = "markdown-body";
-view.innerHTML = markdownIt.render(document.querySelector('.markdownarea').innerText);
+var markdownSource = document.querySelector('.markdownarea').innerText;
+view.innerHTML = markdownIt.render(unindentText(markdownSource));
 document.body.appendChild(view);
 
 // set title
