@@ -23,6 +23,10 @@
     padding: 1.25rem 2.5rem 1.25rem 1.5rem;
 }
 
+.alert > p, .alert > ul {
+    margin-bottom: 0;
+}
+
 .alert-info {
     color: #0D47A1;
     background-color: #BBDEFB;
