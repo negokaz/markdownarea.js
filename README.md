@@ -24,7 +24,7 @@ In-browser, markdown documentation tool.
 </html>
 ```
 
-↓ Render Markdown (in `markdownarea`) as HTML.
+↓ Markdown (in `markdownarea`) is rendered as HTML.
 
 ![](docs/img/rendered.png)
 
