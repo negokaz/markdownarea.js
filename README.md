@@ -9,16 +9,25 @@ In-browser, markdown documentation tool.
 ```html
 <!DOCTYPE html>
 <html>
-<body>
-<textarea class="markdownarea">
-# Markdown here!
-</textarea>
-<script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.2.2/dist/markdownarea.js"></script>
-</body>
+    <body>
+        <textarea class="markdownarea">
+            # markdownarea.js
+
+            In-browser, markdown documentation tool.
+
+            - Easy to use :)
+            - Markdown extended syntax available :sunglasses:
+            - **Only need** single HTML file :rocket:
+        </textarea>
+        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.2.2/dist/markdownarea.js"></script>
+    </body>
 </html>
 ```
 
-The html file is rendered by parsed markdown.
+↓ Render Markdown (in `markdownarea`) as HTML.
+
+![](docs/img/rendered.png)
+
 
 ## TODO
 
