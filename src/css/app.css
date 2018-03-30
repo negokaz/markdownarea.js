@@ -15,3 +15,30 @@
         padding: 15px;
     }
 }
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+}
+
+.alert-info {
+    color: #0D47A1;
+    background-color: #BBDEFB;
+}
+
+.alert-success {
+    color: #1B5E20;
+    background-color: #C8E6C9;
+}
+
+.alert-warning {
+    color: #BF360C;
+    background-color: #FFF9C4;
+}
+
+.alert-danger {
+    color: #B71C1C;
+    background-color: #FFCDD2;
+}

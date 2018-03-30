@@ -1,5 +1,15 @@
 var highlightJs             = require('highlight.js');
 var markdownItContainer     = require('markdown-it-container');
+
+function renderContainer(tokens, idx, _options, env, self) {
+    // add a class to the opening tag
+    if (tokens[idx].nesting === 1) {
+        var containerTypeName = tokens[idx].info.trim();
+        tokens[idx].attrPush([ 'class', `alert alert-${containerTypeName}` ]);
+    }
+    return self.renderToken(tokens, idx, _options, env, self);
+}
+
 var markdownIt              = require('markdown-it')({
     html:           true,
     breaks:         true,
@@ -14,10 +24,10 @@ var markdownIt              = require('markdown-it')({
         return ''; // use external default escaping
       }
 })
-.use(markdownItContainer, 'success')
-.use(markdownItContainer, 'info')
-.use(markdownItContainer, 'warning')
-.use(markdownItContainer, 'danger')
+.use(markdownItContainer, 'success', { render: renderContainer })
+.use(markdownItContainer, 'info', { render: renderContainer })
+.use(markdownItContainer, 'warning', { render: renderContainer })
+.use(markdownItContainer, 'danger', { render: renderContainer })
 .use(require('markdown-it-abbr'))
 .use(require('markdown-it-footnote'))
 .use(require('markdown-it-deflist'))
