@@ -36,6 +36,7 @@ var markdownIt              = require('markdown-it')({
 .use(require('markdown-it-sub'))
 .use(require('markdown-it-sup'))
 .use(require('markdown-it-task-lists'))
+.use(require('markdown-it-emoji'))
 ;
 
 function unindentText(text) {
