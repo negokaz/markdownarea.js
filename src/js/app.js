@@ -1,5 +1,17 @@
 var highlightJs             = require('highlight.js');
+var markdownIt              = require('markdown-it');
 var markdownItContainer     = require('markdown-it-container');
+
+function highlight(src, lang) {
+    if (lang && highlightJs.getLanguage(lang)) {
+        try {
+            return '<pre class="hljs"><code>' +
+                    highlightJs.highlight(lang, src, true).value 
+                    + '</code></pre>';
+        } catch (__) {}
+    }
+    return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(src) + '</code></pre>';
+}
 
 function renderContainer(tokens, idx, _options, env, self) {
     // add a class to the opening tag
@@ -10,19 +22,12 @@ function renderContainer(tokens, idx, _options, env, self) {
     return self.renderToken(tokens, idx, _options, env, self);
 }
 
-var markdownIt              = require('markdown-it')({
+var markdown = markdownIt({
     html:           true,
     breaks:         true,
     linkify:        true,
     typographer:    true,
-    highlight: function (str, lang) {
-        if (lang && highlightJs.getLanguage(lang)) {
-          try {
-            return highlightJs.highlight(lang, str).value;
-          } catch (__) {}
-        }
-        return ''; // use external default escaping
-      }
+    highlight: highlight
 })
 .use(markdownItContainer, 'success', { render: renderContainer })
 .use(markdownItContainer, 'info', { render: renderContainer })
@@ -59,12 +64,13 @@ function unindentText(text) {
 
 import 'github-markdown-css';
 import '../css/app.css';
+import 'highlight.js/styles/github.css';
 
 // render markdown
 var view = document.createElement('div');
 view.className = "markdown-body";
 var markdownSource = document.querySelector('.markdownarea').innerText;
-view.innerHTML = markdownIt.render(unindentText(markdownSource));
+view.innerHTML = markdown.render(unindentText(markdownSource));
 document.body.appendChild(view);
 
 // set title
