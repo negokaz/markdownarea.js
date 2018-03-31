@@ -44,6 +44,29 @@ var markdown = markdownIt({
 .use(require('markdown-it-emoji'))
 ;
 
+var renderFenceWithDefaultRule = markdown.renderer.rules.fence.bind(markdown.renderer.rules);
+
+if (window.mermaid) {
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+}
+
+markdown.renderer.rules.fence = function (tokens, idx, _options, env, self) {
+    var token = tokens[idx];
+    const src = token.content.trim();
+    if (token.info === 'mermaid') {
+        if (window.mermaid) {
+            return `<pre class="mermaid">${src}</pre>`;
+        } else {
+            return '<div class="alert alert-warning">'
+                + '<b>Warning</b><br>'
+                + 'mermaid is not found.<br>'
+                + 'Please include mermaid on your page by script tag.</div>';
+        }
+    } else {
+        return renderFenceWithDefaultRule(tokens, idx, _options, env, self);
+    }
+};
+
 function unindentText(text) {
     if (!text) {
         return text;
