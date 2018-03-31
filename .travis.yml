@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - '9'
+script: npm run build
+cache:
+  directories:
+    - "node_modules"
+deploy:
+  provider: releases
+  api_key:
+    secure: b+EebLjJ7XsqhsCx9uUuqNDMBgBS+TJX3xLrFAkm1Yt2OSOg4OtBd5nQmdezhG5/4YpCAekY+n+1dxdMus5c92sw4rGNf7Ae5fgdn4ge3nReyTWDNmi45l5sbPfUv9gLPrKYQiFRDmG6inMfEVVlN25j8WDgvJMLU/iPzpYn+0iwrkOivhtqdcoyicREdlb9Wrn5TzKXngdm14MA5SN3uiE85eRCH34rdmcWBQHmpnpIMcA+1xb8u14KkHBq/KxfF7eOPp8TH0oNayp8SkTBJGdlZGAjvPmyosJuIWbVt7Wkyjk9jRVjqraC3VJp4L+chfWKCnG0ZNXjDd67D1DiLvhGrfaEi/5uyKaEygHJdiPBAQYRZZJXc2UPNVp6wU0wT9hIyl3LTnlPQEFTa7M9L8s0nsAU3C0VmPUVDNfX2AlwcRR7JozBY61zT77alW8+h/aANJYyHLHuQVv+RUyrFq5wEX5DxNvGkXkctQrFbPShJviF6cWLXDh9B6NGGWxQZ/xQ6T6DZNBtHrQAMGFDLX9BteyDUdZstHkXqPIGSW1Obs3KSTaZnedBX8WU2q2WTll6n+TFmnwRRzBkTHcgdmx6WKqq40v9oxeHN+Ha0UmiLW+PW7MM1gHC+g+YDh2YUnC4a63DqX+BOUVg/PLKnpMzJFNL1Kv0OUm7mwF8tWI=
+  on:
+    repo: negokaz/markdownarea.js
+    tags: true
