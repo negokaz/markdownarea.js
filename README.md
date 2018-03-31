@@ -1,6 +1,6 @@
 # markdownarea.js
 
-![build](https://api.travis-ci.org/negokaz/markdownarea.js.svg) ![release](https://img.shields.io/github/release/negokaz/markdownarea.js.svg) 
+[![build](https://api.travis-ci.org/negokaz/markdownarea.js.svg)](https://travis-ci.org/negokaz/markdownarea.js) [![release](https://img.shields.io/github/release/negokaz/markdownarea.js.svg)](https://github.com/negokaz/markdownarea.js/releases/latest) 
 
 In-browser, markdown documentation tool.
 
