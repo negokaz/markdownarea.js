@@ -1,5 +1,7 @@
 # markdownarea.js
 
+![release](https://img.shields.io/github/release/negokaz/markdownarea.js.svg)
+
 In-browser, markdown documentation tool.
 
 [Demo](https://negokaz.github.io/markdownarea.js)
