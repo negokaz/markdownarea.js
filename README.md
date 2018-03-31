@@ -21,7 +21,7 @@ In-browser, markdown documentation tool.
             - Markdown extended syntax available :sunglasses:
             - **Only need** single HTML file :rocket:
         </textarea>
-        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.2.2/dist/markdownarea.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.3.0/dist/markdownarea.js"></script>
     </body>
 </html>
 ```
@@ -30,6 +30,31 @@ In-browser, markdown documentation tool.
 
 ![](docs/img/rendered.png)
 
+### Write graphs, diagrams and flowcharts
+
+You can use [mermaid](https://mermaidjs.github.io/) in Markdown.
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <textarea class="markdownarea">
+            # mermaid support
+
+            <!-- ↓ write codes as "mermaid" -->
+            ```mermaid
+            graph LR;
+                A-->B;
+            ```
+        </textarea>
+        <!-- ↓ include mermaid -->
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.3.0/dist/markdownarea.js"></script>
+    </body>
+</html>
+```
+
+![](docs/img/mermaid_support.png)
 
 ## TODO
 
