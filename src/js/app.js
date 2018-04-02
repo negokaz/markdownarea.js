@@ -1,3 +1,4 @@
+var jquery                  = require('jquery');
 var highlightJs             = require('highlight.js');
 var markdownIt              = require('markdown-it');
 var markdownItContainer     = require('markdown-it-container');
@@ -17,7 +18,7 @@ function renderContainer(tokens, idx, _options, env, self) {
     // add a class to the opening tag
     if (tokens[idx].nesting === 1) {
         var containerTypeName = tokens[idx].info.trim();
-        tokens[idx].attrPush([ 'class', `alert alert-${containerTypeName}` ]);
+        tokens[idx].attrPush([ 'class', 'alert alert-' + containerTypeName ]);
     }
     return self.renderToken(tokens, idx, _options, env, self);
 }
@@ -55,7 +56,7 @@ markdown.renderer.rules.fence = function (tokens, idx, _options, env, self) {
     const src = token.content.trim();
     if (token.info === 'mermaid') {
         if (window.mermaid) {
-            return `<pre class="mermaid">${src}</pre>`;
+            return '<pre class="mermaid">' + src + '</pre>';
         } else {
             return '<div class="alert alert-warning">'
                 + '<b>Warning</b><br>'
@@ -90,14 +91,13 @@ import '../css/app.css';
 import 'highlight.js/styles/github.css';
 
 // render markdown
-var view = document.createElement('div');
-view.className = "markdown-body";
-var markdownSource = document.querySelector('.markdownarea').innerText;
-view.innerHTML = markdown.render(unindentText(markdownSource));
-document.body.appendChild(view);
+var view = jquery('<div class="markdown-body"></div>');
+var markdownSource = jquery('.markdownarea').text();
+view.html(markdown.render(unindentText(markdownSource)));
+jquery('body').append(view);
 
 // set title
-var title = view.querySelector('h1');
-if (title) {
-    document.title = title.innerText;
+var title = view.find('h1');
+if (title.length > 0) {
+    document.title = title[0].innerText;
 }
