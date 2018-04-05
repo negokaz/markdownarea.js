@@ -1,0 +1,55 @@
+.toc {
+    position: fixed;
+    right: 0.5em;
+    top: 2em;
+    padding: 1em;
+    width: 14em;
+    line-height: 2;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc ul ul {
+    padding-left: 1.5em; 
+}
+
+.toc li {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.toc li a {
+    display: inline-block;
+    color: #aaa;
+    font-size: 12px;
+    text-decoration: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.toc li.visible > a {
+    color: #111;
+    -webkit-transform: translate(5px);
+    -ms-transform: translate(5px);
+    transform: translate(5px);
+}
+
+.toc-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.toc-marker path {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+}
+  
