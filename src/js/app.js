@@ -23,6 +23,11 @@ function renderContainer(tokens, idx, _options, env, self) {
     return self.renderToken(tokens, idx, _options, env, self);
 }
 
+function mkAnchorName(str) {
+    var spaceRegex = new RegExp(markdown.utils.lib.ucmicro.Z.source, 'g');
+    return str.replace(spaceRegex, '');
+}
+
 var markdown = markdownIt({
     html:           true,
     breaks:         true,
@@ -43,6 +48,7 @@ var markdown = markdownIt({
 .use(require('markdown-it-sup'))
 .use(require('markdown-it-task-lists'))
 .use(require('markdown-it-emoji'))
+.use(require('markdown-it-anchor'), { permalink: true, permalinkClass: 'anchor', slugify: mkAnchorName, permalinkSymbol: '<span class="octicon octicon-link">&#xf05c</s>' })
 ;
 
 var renderFenceWithDefaultRule = markdown.renderer.rules.fence.bind(markdown.renderer.rules);
