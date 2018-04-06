@@ -25,7 +25,8 @@ module.exports = {
                         "browsers": ["ie 11"]
                       }
                     }]
-                  ]
+                  ],
+                  plugins: ["transform-object-assign"]
                 }
               }
             }
