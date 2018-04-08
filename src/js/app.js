@@ -150,3 +150,13 @@ var title = view.find('h1');
 if (title.length > 0) {
     document.title = title[0].innerText;
 }
+
+// disable smooth scroll on IE and Edge to prevent toc nav jumping when scrolling
+// see: css - IE 10 & 11 make fixed backgrounds jump when scrolling with mouse wheel - Stack Overflow
+//      https://stackoverflow.com/questions/19377810/ie-10-11-make-fixed-backgrounds-jump-when-scrolling-with-mouse-wheel
+if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./)) {
+    jquery('body').on("mousewheel", function () {
+        event.preventDefault();
+        window.scrollTo(0, window.pageYOffset - event.wheelDelta);
+    });
+}
