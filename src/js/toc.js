@@ -6,8 +6,8 @@ window.onload = function() {
 
 	// Factor of screen size that the element must cross
 	// before it's considered visible
-	var TOP_MARGIN = 0.0,
-		BOTTOM_MARGIN = 0.2;
+	var TOP_MARGIN = 0.1,
+		BOTTOM_MARGIN = 0.0;
 
 	var pathLength;
 
@@ -25,12 +25,28 @@ window.onload = function() {
 			var anchor = item.querySelector( 'a' );
 			var target = document.getElementById( anchor.getAttribute( 'href' ).slice( 1 ) );
 
+
 			return {
 				listItem: item,
 				anchor: anchor,
 				target: target
 			};
 		} );
+
+		// Add position
+		tocItems = tocItems.map(function(item, index) {
+			item.position = {
+				top: function() {
+					return item.target.getBoundingClientRect().top
+				},
+				bottom: function() {
+					return (index + 1 < tocItems.length) // calc by top of next item
+						? tocItems[index + 1].target.getBoundingClientRect().top
+						: document.documentElement.scrollHeight;
+				}
+			};
+			return item;
+		});
 
 		// Remove missing targets
 		tocItems = tocItems.filter( function( item ) {
@@ -88,9 +104,7 @@ window.onload = function() {
 
 		tocItems.forEach( function( item ) {
 
-			var targetBounds = item.target.getBoundingClientRect();
-
-			if( targetBounds.bottom > windowHeight * TOP_MARGIN && targetBounds.top < windowHeight * ( 1 - BOTTOM_MARGIN ) ) {
+			if(item.position.bottom() > windowHeight * TOP_MARGIN && item.position.top() < windowHeight * (1 - BOTTOM_MARGIN)) {
 				pathStart = Math.min( item.pathStart, pathStart );
 				pathEnd = Math.max( item.pathEnd, pathEnd );
 
@@ -101,7 +115,6 @@ window.onload = function() {
 			else {
 				item.listItem.classList.remove( 'visible' );
 			}
-
 		} );
 
 		// Specify the visible path or hide the path altogether

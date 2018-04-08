@@ -1,10 +1,9 @@
 .toc {
     position: fixed;
-    right: 0.5em;
-    top: 2em;
+    top: 0;
+    right: 0;
     padding: 1em;
     width: 14em;
-    line-height: 2;
 }
 
 .toc ul {
@@ -14,7 +13,7 @@
 }
 
 .toc ul ul {
-    padding-left: 1.5em; 
+    padding-left: 1.5em;
 }
 
 .toc li {
@@ -28,14 +27,12 @@
     color: #aaa;
     font-size: 12px;
     text-decoration: none;
-    -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    line-height: 2;
 }
 
 .toc li.visible > a {
     color: #111;
-    -webkit-transform: translate(5px);
-    -ms-transform: translate(5px);
     transform: translate(5px);
 }
 
@@ -49,7 +46,6 @@
 }
 
 .toc-marker path {
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; 
+    transition: all 0.2s ease;
 }
   

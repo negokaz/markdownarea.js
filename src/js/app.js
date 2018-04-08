@@ -143,7 +143,7 @@ toc.append(svg);
 
 jquery('body')
     .append(toc)
-    .append(view);
+    .append(jquery('<div class="content"></div>').append(view));
 
 // set title
 var title = view.find('h1');

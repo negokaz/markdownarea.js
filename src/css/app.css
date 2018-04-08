@@ -2,18 +2,26 @@
     display: none;
 }
 
-.markdown-body {
-    box-sizing: border-box;
-    min-width: 200px;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 45px;
+.content {
+    margin: 1em 16em 1em 1em;
 }
 
 @media (max-width: 767px) {
-    .markdown-body {
-        padding: 15px;
+
+    .content {
+        margin: 15px;
     }
+
+    .toc {
+        display: none;
+    }
+}
+
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 15em;
+    max-width: 55em;
+    margin: 0 auto;
 }
 
 .markdown-body mark {
