@@ -108,7 +108,7 @@ var index = 0;
 var currentLevel = 0;
 var currentElem = toc;
 var formatTocLi = function(headerElem) {
-    return jquery(`<li><a href="#${headerElem.get(0).id}">${headerElem.html()}</a></li>`);
+    return jquery(`<li><a href="#${headerElem.get(0).id}">${markdown.utils.escapeHtml(headerElem.text())}</a></li>`);
 };
 var headers = view.find('h1,h2,h3').map(function() {
     return {elem: jquery(this).clone().find('span.octicon').remove().end(), level: parseInt(this.localName.replace('h', ''))};
