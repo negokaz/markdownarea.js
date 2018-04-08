@@ -21,7 +21,7 @@ In-browser, markdown documentation tool.
             - Markdown extended syntax available :sunglasses:
             - **Only need** single HTML file :rocket:
         </textarea>
-        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.4.0/dist/markdownarea.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.4.1/dist/markdownarea.js"></script>
     </body>
 </html>
 ```
