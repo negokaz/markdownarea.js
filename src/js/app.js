@@ -49,6 +49,7 @@ var markdown = markdownIt({
 .use(require('markdown-it-task-lists'))
 .use(require('markdown-it-emoji'))
 .use(require('markdown-it-anchor'), { permalink: true, permalinkClass: 'anchor', slugify: mkAnchorName, permalinkSymbol: '<span class="octicon octicon-link">&#xf05c</s>' })
+.use(require('markdown-it-imsize'))
 ;
 
 var renderFenceWithDefaultRule = markdown.renderer.rules.fence.bind(markdown.renderer.rules);

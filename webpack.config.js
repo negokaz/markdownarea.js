@@ -35,5 +35,8 @@ module.exports = {
     output: {
         filename: `${package.name}.js`,
         path: path.join(__dirname, 'dist')
+    },
+    node: {
+      fs: "empty"
     }
   };
