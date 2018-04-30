@@ -1,5 +1,5 @@
-var jquery                  = require('jquery');
-var highlightJs             = require('highlight.js');
+var jquery                  = require('jquery/dist/jquery.slim.min.js');
+var highlightJs             = require('./highlight.js');
 var markdownIt              = require('markdown-it');
 var markdownItContainer     = require('markdown-it-container');
 
