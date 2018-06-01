@@ -1,5 +1,6 @@
 var jquery                  = require('jquery/dist/jquery.slim.min.js');
 var highlightJs             = require('./highlight.js');
+var parseCsv                = require('parse-csv');
 var markdownIt              = require('markdown-it');
 var markdownItContainer     = require('markdown-it-container');
 
@@ -69,6 +70,16 @@ markdown.renderer.rules.fence = function (tokens, idx, _options, env, self) {
                 + 'mermaid is not found.<br>'
                 + 'Please include mermaid on your page by script tag.</div>';
         }
+    } else if (token.info === 'csv') {
+        return parseCsv('html', src, {headers: {included: false}});
+    } else if (token.info === 'csv-with-header') {
+        return parseCsv('html', src, {headers: {included: true}});
+    } else if (token.info === 'tsv') {
+        // convert soft Tab to hard Tab
+        return parseCsv('html', src.replace(/ {4,8}/g, "\t"), {headers: {included: false}, delim: '\t'});
+    } else if (token.info === 'tsv-with-header') {
+        // convert soft Tab to hard Tab
+        return parseCsv('html', src.replace(/ {4,8}/g, "\t"), {headers: {included: true}, delim: '\t'});
     } else {
         return renderFenceWithDefaultRule(tokens, idx, _options, env, self);
     }
