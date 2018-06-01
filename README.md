@@ -21,7 +21,7 @@ In-browser, markdown documentation tool.
             - Markdown extended syntax available :sunglasses:
             - **Only need** single HTML file :rocket:
         </textarea>
-        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.5.0/dist/markdownarea.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.6.0/dist/markdownarea.js"></script>
     </body>
 </html>
 ```
@@ -49,7 +49,7 @@ You can use [mermaid](https://mermaidjs.github.io/) in Markdown.
         </textarea>
         <!-- ↓ include mermaid -->
         <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.5.0/dist/markdownarea.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/negokaz/markdownarea.js@v0.6.0/dist/markdownarea.js"></script>
     </body>
 </html>
 ```
