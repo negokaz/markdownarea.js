@@ -8,6 +8,8 @@ In-browser, markdown documentation tool.
 
 ## Usage
 
+Download template [here](https://raw.githubusercontent.com/negokaz/markdownarea.js/master/docs/template.md.html).
+
 ```html
 <!DOCTYPE html>
 <html>

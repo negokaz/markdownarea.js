@@ -1,3 +1,11 @@
+body, html {
+    width: initial;
+    height: initial;
+    margin: initial;
+    width: initial;
+    overflow: initial;
+}
+
 .markdownarea {
     display: none;
 }
